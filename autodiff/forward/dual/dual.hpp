@@ -1495,11 +1495,15 @@ using detail::eval;
 using detail::Dual;
 using detail::HigherOrderDual;
 
-using dual0th = HigherOrderDual<0, double>;
-using dual1st = HigherOrderDual<1, double>;
-using dual2nd = HigherOrderDual<2, double>;
-using dual3rd = HigherOrderDual<3, double>;
-using dual4th = HigherOrderDual<4, double>;
+#if not defined(USERTYPE)
+typedef double Number_t;
+#endif
+
+using dual0th = HigherOrderDual<0, Number_t>;
+using dual1st = HigherOrderDual<1, Number_t>;
+using dual2nd = HigherOrderDual<2, Number_t>;
+using dual3rd = HigherOrderDual<3, Number_t>;
+using dual4th = HigherOrderDual<4, Number_t>;
 
 using dual = dual1st;
 
